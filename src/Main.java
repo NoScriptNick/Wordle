@@ -51,8 +51,8 @@ public class Main {
                 for (int j = 0; j < wordle.length(); j++) {
                     if (guess.substring(j, j+1).equalsIgnoreCase(wordle.substring(j, j+1))) {
                         System.out.print(greenBackground + guess.substring(j, j+1) + resetBackground);
-                    } else if (guess.substrubg) {
-
+                    } else if (wordle.contains(guess.substring(j, j+1))) {
+                        System.out.print(yellowBackground + guess.substring(j, j+1) + resetBackground);
                     } else {
                         System.out.print(resetBackground + guess.substring(j, j+1));
                     }
