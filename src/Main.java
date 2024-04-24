@@ -16,7 +16,8 @@ public class Main {
 
         //Variables
         ArrayList<String> wordList = new ArrayList<String>();
-        wordList.addAll(Arrays.asList("scram", "dream", "cream", "trust", "conquest", "bus", "stream", "bloom", "crest", "grown", "quest", "mrboolean"));
+        wordList.addAll(Arrays.asList("scram", "dream", "cream", "trust", "conquest", "bus", "stream",
+                "bloom", "crest", "grown", "quest", "mrboolean", "arise", "bless", "guard", "sight", "shack", "floss", "spasm"));
         ArrayList<String> filteredList = new ArrayList<String>();
         String wordle;
         String guess;
@@ -31,10 +32,6 @@ public class Main {
             }
         }
 
-        //Randomizes a word from the wordList and sets that word as the wordle that the user has to guess
-        wordleIndex = rand.nextInt(filteredList.size());
-        wordle = filteredList.get(wordleIndex);
-
         //Introduction
         System.out.println("Welcome to Wordle! You have to guess a 5 letter word in 6 tries! " +
                 "Begin by entering a 5 letter word, and if any of the letters in your guess are " +
@@ -43,8 +40,11 @@ public class Main {
         System.out.println("_____");
 
         //Plays game in a while loop, breaks the for loop when the user wins
+        //Randomizes a word from the wordle list by getting a random number, and setting the random number as the index for the word in the list
         //Breaks out of the while loop if the user does not want to play again
         while (playAgain) {
+            wordleIndex = rand.nextInt(filteredList.size());
+            wordle = filteredList.get(wordleIndex);
             for (int i = 0; i < 6; i++) {
                 guess = InputHelper.getLengthFiveString(scan, "\nEnter a word!");
                 for (int j = 0; j < wordle.length(); j++) {
